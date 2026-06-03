@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ujian Hiragana & Katakana</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+    background:#f5f5f5;
+}
+
+.card{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:15px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+}
+
+.timer{
+    position:fixed;
+    top:10px;
+    right:10px;
+    background:red;
+    color:white;
+    padding:10px;
+    border-radius:8px;
+    font-weight:bold;
+    z-index:999;
+}
+
+button{
+    background:#28a745;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="timer" id="timer">30:00</div>
+
+<h1>UJIAN HIRAGANA & KATAKANA</h1>
+
+<div class="card">
+
+<label>Nama Guru:</label>
+<input
+type="text"
+id="guru"
+value="Moh.Masnur" readonly
+style="width:100%;padding:10px;margin-top:5px;"
+>
+
+<br><br>
+
+<label>Nama Siswa:</label>
+<input
+type="text"
+id="nama"
+placeholder="Masukkan nama siswa"
+style="width:100%;padding:10px;margin-top:5px;"
+>
+
+</div>
+
+<form id="quizForm">
+
+<div class="card">
+<h3>1. ち = ?</h3>
+<input type="radio" name="q1" value="0"> ra<br>
+<input type="radio" name="q1" value="1"> chi<br>
+<input type="radio" name="q1" value="0"> sa<br>
+<input type="radio" name="q1" value="0">
+  shi<br>
+</div>
+
+<div class="card">
+<h3>2. な = ?</h3>
+<input type="radio" name="q2" value="1"> na<br>
+<input type="radio" name="q2" value="0"> ta<br>
+<input type="radio" name="q2" value="0"> ku<br>
+<input type="radio" name="q2" value="0"> ka
+</div>
+
+<div class="card">
+<h3>3. の = ?</h3>
+<input type="radio" name="q3" value="0"> ni<br>
+<input type="radio" name="q3" value="1"> no<br>
+<input type="radio" name="q3" value="0"> ko<br>
+<input type="radio" name="q3" value="0"> fu
+</div>
+
+<div class="card">
+<h3>4. た = ?</h3>
+<input type="radio" name="q4" value="0"> nu<br>
+<input type="radio" name="q4" value="0"> ka<br>
+<input type="radio" name="q4" value="0"> na<br>
+<input type="radio" name="q4" value="1"> ta
+</div>
+
+<div class="card">
+<h3>5. ぬ = ?</h3>
+<input type="radio" name="q5" value="0"> re<br>
+<input type="radio" name="q5" value="0"> ne<br>
+<input type="radio" name="q5" value="1"> nu<br>
+<input type="radio" name="q5" value="0"> he
+</div>
+
+<div class="card">
+<h3>6. や = ?</h3>
+<input type="radio" name="q6" value="1"> ya<br>
+<input type="radio" name="q6" value="0"> yu<br>
+<input type="radio" name="q6" value="0"> yo<br>
+<input type="radio" name="q6" value="0"> ra
+</div>
+
+<div class="card">
+<h3>7. ぺ = ?</h3>
+<input type="radio" name="q7" value="0"> e<br>
+<input type="radio" name="q7" value="1"> pe<br>
+<input type="radio" name="q7" value="0"> he<br>
+<input type="radio" name="q7" value="0"> be
+</div>
+
+<div class="card">
+<h3>8. ご = ?</h3>
+<input type="radio" name="q8" value="0"> ko<br>
+<input type="radio" name="q8" value="0"> mi<br>
+<input type="radio" name="q8" value="0"> o<br>
+<input type="radio" name="q8" value="1"> go
+</div>
+
+<div class="card">
+<h3>9. だ = ?</h3>
+<input type="radio" name="q9" value="0"> ta<br>
+<input type="radio" name="q9" value="1"> da<br>
+<input type="radio" name="q9" value="0"> de<br>
+<input type="radio" name="q9" value="0"> ta
+</div>
+
+<div class="card">
+<h3>10. で = ?</h3>
+<input type="radio" name="q10" value="0"> te<br>
+<input type="radio" name="q10" value="1"> de<br>
+<input type="radio" name="q10" value="0"> da<br>
+<input type="radio" name="q10" value="0"> i
+</div>
+
+<div class="card">
+<h3>11. が = ?</h3>
+<input type="radio" name="q11" value="0"> ka<br>
+<input type="radio" name="q11" value="1"> ga<br>
+<input type="radio" name="q11" value="0"> chi<br>
+<input type="radio" name="q11" value="0"> o
+</div>
+
+<div class="card">
+<h3>12. ね = ?</h3>
+<input type="radio" name="q12" value="0"> nu<br>
+<input type="radio" name="q12" value="0"> ki<br>
+<input type="radio" name="q12" value="0"> re<br>
+<input type="radio" name="q12" value="1"> ne
+</div>
+
+<div class="card">
+<h3>13. れ = ?</h3>
+<input type="radio" name="q13" value="1"> re<br>
+<input type="radio" name="q13" value="0"> ne<br>
+<input type="radio" name="q13" value="0"> gi<br>
+<input type="radio" name="q13" value="0"> chi
+</div>
+
+<div class="card">
+<h3>14. ま = ?</h3>
+<input type="radio" name="q14" value="1"> ma<br>
+<input type="radio" name="q14" value="0"> ha<br>
+<input type="radio" name="q14" value="0"> ho<br>
+<input type="radio" name="q14" value="0"> mi
+</div>
+
+<div class="card">
+<h3>15. ほ = ?</h3>
+<input type="radio" name="q15" value="0"> ro<br>
+<input type="radio" name="q15" value="0"> ha<br>
+<input type="radio" name="q15" value="0"> ma<br>
+<input type="radio" name="q15" value="1"> ho
+</div>
+
+<div class="card">
+<h3>16. じ = ?</h3>
+<input type="radio" name="q16" value="0"> shi<br>
+<input type="radio" name="q16" value="1"> ji<br>
+<input type="radio" name="q16" value="0"> ju<br>
+<input type="radio" name="q16" value="0"> shu
+</div>
+
+<div class="card">
+<h3>17. べ = ?</h3>
+<input type="radio" name="q17" value="0"> he<br>
+<input type="radio" name="q17" value="1"> be<br>
+<input type="radio" name="q17" value="0"> ne<br>
+<input type="radio" name="q17" value="0"> ho<br>
+</div>
+
+<div class="card">
+<h3>18. げ = ?</h3>
+<input type="radio" name="q18" value="1"> ge<br>
+<input type="radio" name="q18" value="0"> ke<br>
+<input type="radio" name="q18" value="0"> ga<br>
+<input type="radio" name="q18" value="0"> chi
+</div>
+
+<div class="card">
+<h3>19. ぼ = ?</h3>
+<input type="radio" name="q19" value="0"> ho<br>
+<input type="radio" name="q19" value="1"> bo<br>
+<input type="radio" name="q19" value="0"> ha<br>
+<input type="radio" name="q19" value="0"> ma
+</div>
+
+<div class="card">
+<h3>20. て = ?</h3>
+<input type="radio" name="q20" value="0"> shi<br>
+<input type="radio" name="q20" value="0"> ko<br>
+<input type="radio" name="q20" value="0"> so<br>
+<input type="radio" name="q20" value="1"> te
+</div>
+
+<div class="card">
+<h3>21. ぺ = ?</h3>
+<input type="radio" name="q21" value="0"> po<br>
+<input type="radio" name="q21" value="0"> ne<br>
+<input type="radio" name="q21" value="1"> pe<br>
+<input type="radio" name="q21" value="0"> he
+</div>
+
+<div class="card">
+<h3>22. わ = ?</h3>
+<input type="radio" name="q22" value="1"> wa<br>
+<input type="radio" name="q22" value="0"> ne<br>
+<input type="radio" name="q22" value="0"> me<br>
+<input type="radio" name="q22" value="0"> mo
+</div>
+
+<div class="card">
+<h3>23. め = ?</h3>
+<input type="radio" name="q23" value="0"> ka<br>
+<input type="radio" name="q23" value="1"> me<br>
+<input type="radio" name="q23" value="0"> ne<br>
+<input type="radio" name="q23" value="0"> wa
+</div>
+
+<div class="card">
+<h3>24. む = ?</h3>
+<input type="radio" name="q24" value="0"> nu<br>
+<input type="radio" name="q24" value="0"> re<br>
+<input type="radio" name="q24" value="0"> wa<br>
+<input type="radio" name="q24" value="1"> mu
+</div>
+
+<div class="card">
+<h3>25. ぱ = ?</h3>
+<input type="radio" name="q25" value="0"> ho<br>
+<input type="radio" name="q25" value="0"> ha<br>
+<input type="radio" name="q25" value="1"> pa<br>
+<input type="radio" name="q25" value="0"> ta
+</div>
+
+<div class="card">
+<h3>26. ぼ = ?</h3>
+<input type="radio" name="q26" value="0"> po<br>
+<input type="radio" name="q26" value="1"> bo<br>
+<input type="radio" name="q26" value="0"> ho<br>
+<input type="radio" name="q26" value="0"> ma
+</div>
+
+<div class="card">
+<h3>27. に = ?</h3>
+<input type="radio" name="q27" value="1"> ni<br>
+<input type="radio" name="q27" value="0"> no<br>
+<input type="radio" name="q27" value="0"> ta<br>
+<input type="radio" name="q27" value="0"> i
+</div>
+
+<div class="card">
+<h3>28. よ = ?</h3>
+<input type="radio" name="q28" value="1"> yo<br>
+<input type="radio" name="q28" value="0"> ru<br>
+<input type="radio" name="q28" value="0"> re<br>
+<input type="radio" name="q28" value="0"> ko
+</div>
+
+<div class="card">
+<h3>29. る = ?</h3>
+<input type="radio" name="q29" value="0"> nii<br>
+<input type="radio" name="q29" value="0"> ku<br>
+<input type="radio" name="q29" value="0"> ro<br>
+<input type="radio" name="q29" value="1"> ru
+</div>
+
+<div class="card">
+<h3>30. ら = ?</h3>
+<input type="radio" name="q30" value="0"> shi<br>
+<input type="radio" name="q30" value="0"> ru<br>
+<input type="radio" name="q30" value="1"> ra<br>
+<input type="radio" name="q30" value="0"> chi
+</div>
+
+<button type="button" onclick="konfirmasiSelesai()">
+SELESAI UJIAN
+</button>
+
+</form>
+
+<br>
+<div id="hasil"></div>
+
+<script>
+
+let cheatCount = 0;
+
+/* Timer 30 menit */
+let waktu = 1800;
+
+/* Anti pindah tab */
+document.addEventListener("visibilitychange", () => {
+    if(document.hidden){
+        cheatCount++;
+        alert("Peringatan! Keluar dari halaman ujian terdeteksi.");
+    }
+});
+
+/* Anti pindah aplikasi */
+window.addEventListener("blur", () => {
+    cheatCount++;
+});
+
+/* Anti klik kanan */
+document.addEventListener("contextmenu", e => {
+    e.preventDefault();
+});
+
+/* Anti copy */
+document.addEventListener("copy", e => {
+    e.preventDefault();
+});
+
+const timer = setInterval(() => {
+
+    let menit = Math.floor(waktu / 60);
+    let detik = waktu % 60;
+
+    document.getElementById("timer").innerHTML =
+        String(menit).padStart(2,"0") +
+        ":" +
+        String(detik).padStart(2,"0");
+
+    waktu--;
+
+    if(waktu < 0){
+        clearInterval(timer);
+        alert("Waktu habis!");
+        selesaiUjian();
+    }
+
+},1000);
+
+function konfirmasiSelesai(){
+
+
+    const yakin = confirm(
+        "Apakah Anda yakin ingin mengakhiri ujian sekarang? Jawaban yang sudah dikirim tidak dapat diubah lagi."
+    );
+
+
+    if(yakin){
+        selesaiUjian();
+    }
+}
+
+function selesaiUjian(){
+
+let skor = 0;
+let salah = 0;
+
+for(let i=1;i<=30;i++){
+
+    const jawaban =
+    document.querySelector(`input[name=q${i}]:checked`);
+
+    if(jawaban){
+
+        if(Number(jawaban.value) === 1){
+            skor++;
+        }else{
+            salah++;
+        }
+
+    }else{
+        salah++;
+    }
+}
+
+    clearInterval(timer);
+
+    const guru =
+    document.getElementById("guru").value.trim();
+
+    const nama =
+    document.getElementById("nama").value.trim();
+
+    if(nama === ""){
+        alert("Masukkan nama siswa terlebih dahulu");
+        return;
+    }
+
+
+    let nilai = (skor / 30) * 100;
+
+    let status =
+    nilai >= 80 ? "LULUS" : "TIDAK LULUS";
+
+    document.getElementById("hasil").innerHTML = `
+<div class="card">
+<h2>HASIL UJIAN</h2>
+<p><b>Guru:</b> ${guru}</p>
+<p><b>Nama Siswa:</b> ${nama}</p>
+<p><b>Benar:</b> ${skor}</p>
+<p><b>Salah:</b> ${salah}</p>
+<p><b>Nilai:</b> ${nilai}</p>
+<p><b>Pelanggaran:</b> ${cheatCount}</p>
+<p><b>Status:</b> ${status}</p>
+</div>
+`;
+
+    kirimWhatsApp(
+    guru,
+    nama,
+    nilai,
+    skor,
+    salah,
+    cheatCount,
+    status
+);
+}
+
+function kirimWhatsApp(
+    guru,
+    nama,
+    nilai,
+    benar,
+    salah,
+    pelanggaran,
+    status
+){
+
+    const nomorGuru = "6282117194974";
+
+    const pesan =
+`HASIL UJIAN HIRAGANA & KATAKANA
+
+Guru: ${guru}
+Nama Siswa: ${nama}
+Benar: ${benar}
+Salah: ${salah}
+Nilai: ${nilai}
+Pelanggaran: ${pelanggaran}
+Status: ${status}`;
+
+    const url =
+`https://wa.me/${nomorGuru}?text=${encodeURIComponent(pesan)}`;
+
+    window.open(url,'_blank');
+}
+
+</script>
+
+</body>
+</html>
